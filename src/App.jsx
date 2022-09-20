@@ -1,44 +1,38 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import './App.css'
+import React, { useState } from 'react'
+import { Container } from '@mui/system';
+import Searcher from './components/Searcher';
 
-// function App() {
-//   const [count, setCount] = useState(0)
+const App = () =>{
+//creando estados
+const [inputUser, setInputUser] = useState('octocat');//estado inicial
+const [userStater, userState] = useState('inputUser');//esto escucha constantemente cuando se llama a la consulta
+// console.log('valueInput',valueInput);
 
-//   return (
-//     <div className="App">
-//       <div>
-//         <a href="https://vitejs.dev" target="_blank">
-//           <img src="/vite.svg" className="logo" alt="Vite logo" />
-//         </a>
-//         <a href="https://reactjs.org" target="_blank">
-//           <img src={reactLogo} className="logo react" alt="React logo" />
-//         </a>
-//       </div>
-//       <h1>Vite + React</h1>
-//       <div className="card">
-//         <button onClick={() => setCount((count) => count + 1)}>
-//           count is {count}
-//         </button>
-//         <p>
-//           Edit <code>src/App.jsx</code> and save to test HMR
-//         </p>
-//       </div>
-//       <p className="read-the-docs">
-//         Click on the Vite and React logos to learn more
-//       </p>
-//     </div>
-//   )
-// }
-
-// export default App
-
-import React from "react";
-
-const App= ()=>{
   return(
-    <div>Soy Jonatan</div>
+    <Container sx={{
+      background: 'whitesmoke',
+      width:'80vw',
+      height:'500px',
+      borderRadius: '19px',
+      marginTop: '40px',
+      display: 'flex',
+      flexDirection:'column',
+      alignItems:'center'
+    }}>
+      <Searcher inputUser={inputUser} setInputUser={setInputUser} /> {/* aqui existe unas props y son dos */}
+      
+    </Container>
   )
 };
 
 export default App;
+
+// import React from "react";
+
+// const App= ()=>{
+//   return(
+//     <div>Soy Jonatan</div>
+//   )
+// };
+
+// export default App;
